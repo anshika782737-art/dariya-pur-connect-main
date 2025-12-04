@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+
+
+@layer base {
+  :root {
+    --background: 30 20% 98%;
+    --foreground: 25 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 10% 10%;
+
+    --primary: 25 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 30% 96%;
+    --secondary-foreground: 25 10% 10%;
+
+    --muted: 35 20% 96%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 35 30% 96%;
+    --accent-foreground: 25 85% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 10% 90%;
+    --input: 35 10% 90%;
+    --ring: 25 85% 45%;
+
+    --radius: 1rem;
+
+    /* Custom village theme colors - Modernized */
+    --village-cream: 35 30% 98%;
+    --village-warm: 35 20% 94%;
+    --village-terracotta: 25 85% 45%;
+    --village-terracotta-light: 25 85% 55%;
+    --village-brown: 25 20% 20%;
+    --village-brown-light: 25 15% 30%;
+    --village-gold: 40 80% 50%;
+    --village-green: 140 30% 40%;
+
+    /* Shadows - Modern & Soft */
+    --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(25 30% 15% / 0.15);
+    --shadow-hover: 0 12px 40px -12px hsl(25 30% 15% / 0.2);
+  }
+
+  .dark {
+    --background: 25 30% 10%;
+    --foreground: 35 30% 96%;
+
+    --card: 25 25% 15%;
+    --card-foreground: 35 30% 96%;
+
+    --popover: 25 30% 10%;
+    --popover-foreground: 35 30% 96%;
+
+    --primary: 25 85% 55%;
+    --primary-foreground: 25 30% 10%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 35 30% 96%;
+
+    --muted: 25 15% 25%;
+    --muted-foreground: 35 15% 65%;
+
+    --accent: 25 70% 45%;
+    --accent-foreground: 35 30% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 25 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-hover);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
